@@ -1,0 +1,43 @@
+<apex:page standardController="Account"> 
+<style> 
+td.green{background-color:#00FF00; border:none} 
+td.red{background-color:#FF0000; border:none} 
+td.grey{background-color:#DDDDDD; border:none} 
+td.green_label{background-color:#00FF00;  color:white; 
+border:1px solid white;} 
+td.red_label{background-color:#FF0000;  color:white;  border:1px 
+solid white;} 
+</style> 
+<script> 
+var iLimit = 0; 
+var iThreshold =  40; 
+if( {!Account.Credit_Score__c} ) 
+iLimit   =   {!Account.Credit_Score__c}; 
+document.write('<table style="border: 1px 
+solid white; border-collapse:collapse;">'); 
+document.write('<tr>'); 
+for(var i=0; i<100; i=i+5){ 
+if( iLimit <= iThreshold ){ 
+if( i<iLimit ) 
+document.write('<td class="red"
+nowrap="nowrap">&nbsp;</td>');
+else
+document.write('<td class="grey"
+nowrap="nowrap">&nbsp;</td>');
+}else{
+if( i<iLimit )
+document.write('<td class="green"
+nowrap="nowrap">&nbsp;</td>');
+else
+document.write('<td class="grey"
+nowrap="nowrap">&nbsp;</td>');
+}
+}
+iLimit <= iThreshold ? document.write('<td 
+class="red_label"  nowrap="nowrap">&nbsp&nbsp'   +  iLimit   + 
+'&nbsp&nbsp</td></tr></table>') : 
+document.write('<td class="green_label" 
+nowrap="nowrap">&nbsp&nbsp'   +  iLimit   +  '&nbsp&nbsp</td></tr></ 
+table>'); 
+</script>
+</apex:page>

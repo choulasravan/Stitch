@@ -1,0 +1,2 @@
+<apex:page sidebar="true" tabStyle="Account" >
+<apex:enhancedList type="Account" height="500" rowsPerPage="50" id="AccountList"/> </apex:page>
