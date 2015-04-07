@@ -6,7 +6,7 @@
         <classpath>
             <pathelement location="../ant-salesforce.jar" />
         </classpath>
-    </taskdef
+    </taskdef>
    
     <!-- Test out deploy and retrieve verbs for package 'mypkg' -->
     <target name="test">
